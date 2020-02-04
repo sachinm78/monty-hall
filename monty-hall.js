@@ -23,6 +23,22 @@ function montyHall(toSwitch) {
         return carDoor === chosenDoor
     }
 
-    // Write a function to simulate the game
-
 }
+
+// Write a function to simulate the game
+function simulateGame(num, toSwitch) {
+
+    let gamesWon = 0;
+
+    for(let i = 0; i < num; i++){
+        gamesWon += montyHall(toSwitch)
+    }
+
+    return gamesWon
+}
+
+// console log the results for 10,000 simulations when contestant chooses to switch
+console.log(simulateGame(10000, toSwitch = true))
+
+// console log the results for 10,000 simulations when contestant doesn't change their selection
+console.log(simulateGame(10000, toSwitch = false))
